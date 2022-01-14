@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegación de Eventos</title>
+    <!-- Vinculados a bootstrap 5 en estilos css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <!-- El data- va seguido de una palabra que le asignemos, en este caso div -->
+        <div 
+            id="padre" 
+            class="border border-primary border-5 py-5 m-3"
+            data-div="Padre">
+            Lorem, ipsum dolor
+            <div 
+                id="hijo" 
+                class="border border-secondary border-5 py-5 m-3"
+                data-div="Hijo">
+                Lorem, ipsum dolor
+                <div 
+                    id="nieto" 
+                    class="border border-danger border-5 py-5 m-3"
+                    data-div="Nieto">
+                    Lorem, ipsum dolor
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <form>
+        <input type="text" name="nombre">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <a href="#">Ancla</a> -->
+
+    <script src="js/doms.js"></script>
+</body>
+</html>
