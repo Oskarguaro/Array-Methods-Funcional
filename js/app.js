@@ -9,7 +9,7 @@ const fragment = document.createDocumentFragment();
 document.addEventListener("click", (e) =>{
     // console.log(e.target.matches(".btn-outline-primary"));
     if (e.target.matches(".btn-outline-primary")){
-        console.log("ejecutar agregar al carrito");
+        // console.log("ejecutar agregar al carrito");
         agregarAlCarrito(e)
     };
 
@@ -52,7 +52,7 @@ const agregarAlCarrito = (e) => {
         // carritoObjeto[indice].precio = carritoObjeto[indice].cantidad * producto.precio;
     }
 
-    console.log(carritoObjeto);
+    // console.log(carritoObjeto);
 
     pintarCarrito();
 
@@ -81,24 +81,28 @@ carrito.appendChild(fragment);
 };
 
 pintarFooter = () => {
-    console.log("pintar footer")
+    // console.log("pintar footer")
     footer.textContent ="";
 
     //con el ", 0" le indicamos a reduce que el resultado es un número 
     const total = carritoObjeto.reduce(
         (acc, current) => acc + current.cantidad * current.precio, 
         0
-    );
+        );
+
     const clone = templateFooter.content.cloneNode(true);
     clone.querySelector("span").textContent = total;
 
     //No hay necesidad de fragment porque es un sólo ciclo por lo cual se puede agregar directamente
     footer.appendChild(clone);
 
+    if (carritoObjeto.length === 0){
+        footer.textContent = "";
+    }
 };
 
 const bntAumentar = (e) => {
-    console.log("me diste click", e.target.dataset.id);
+    // console.log("me diste click", e.target.dataset.id);
     carritoObjeto = carritoObjeto.map(item =>{
         if (item.id === e.target.dataset.id){
             item.cantidad ++;
@@ -112,7 +116,7 @@ const bntAumentar = (e) => {
 };
 
 const btnDisminuir = (e) => {
-    console.log("me diste click", e.target.dataset.id);
+    // console.log("me diste click", e.target.dataset.id);
 
     //El filter es útil para borrar elementos
     carritoObjeto = carritoObjeto.filter(item =>{
