@@ -15,7 +15,7 @@
 // console.log(nuevoArray);
 
 
-//Cuál será la dierencia de usar map si esto también funciona?
+//Cuál será la diferencia de usar map si esto también funciona?
 // const copiaArray = frutas;
 // frutas.push("🍉");
 // console.log(copiaArray);
